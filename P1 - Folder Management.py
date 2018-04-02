@@ -7,6 +7,7 @@
 # Solution: We use a "for loop". This is something in programming that does
 # something over and over again. Example:
 
+print('First bunch')
 for i in [5, 4, 2, 8, -1, -2]:  # for each thing in the brackets...
     print(i)
 
@@ -15,26 +16,33 @@ for i in [5, 4, 2, 8, -1, -2]:  # for each thing in the brackets...
 
 # We can also write
 
+print('Second Bunch')
 for i in range(5):
     print(i)
 
 # This is different because we use 'range(5)'. This creates a bracketed list...
 # [0, 1, 2, 3, 4] of ascending numbers. It's useful for iterating.
 
-import os  # required to manipulate 
+import os  # here, we import some code someone else wrote. Its called 'os' and
+            # lets us do things to the computer files.
 
-def createFolder(directory):
+nameList = open('RandomNames.txt')
 
-    try:
+print('one name from the list')
+#print(nameList.readline())
+print('a second name from the list')
+#print(nameList.readline())
 
-        if not os.path.exists(directory):
+# These two lines above print a name from the list. Can you print all the names
+# in the file? Try it out. The names are all in 'RandomNames.txt' in the
+# repository.
 
-            os.makedirs(directory)
+##########################################################################
 
-    except OSError:
+# This is the code that I wrote (solution)
 
-        print ('Error: Creating directory. ' +  directory)
-
-
-createFolder('./data/')
-# Creates a folder in the current directory called data
+#for i in range(50):
+#    name = nameList.readline()
+#    print(name)
+#    if name:
+#        os.mkdir('Names/' + name.rstrip('\n'))
